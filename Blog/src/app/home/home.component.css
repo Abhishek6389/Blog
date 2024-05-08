@@ -83,6 +83,7 @@ button{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+  
   }
 
   form {
@@ -114,3 +115,18 @@ button{
    padding-inline: 0.6rem;
    padding-block: 0.6rem;
   }
+
+
+.blogs-container app-card:hover {
+  animation: hop 0.5s ease infinite alternate;
+}
+
+@keyframes hop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
