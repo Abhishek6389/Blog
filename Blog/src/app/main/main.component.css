@@ -94,4 +94,53 @@
 a{
   text-decoration: none;
 }
+
+
+/* Styles for featured blog cards */
+.featured-blogs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.blog-card {
+  width: calc(33.33% - 10px); /* Adjust this value according to your layout */
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.blog-card .image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+
+.blog-card .details {
+  padding: 15px;
+}
+
+.blog-card h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.blog-card p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.blog-card .read-more {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.blog-card .read-more:hover {
+  text-decoration: underline;
+}
+
   

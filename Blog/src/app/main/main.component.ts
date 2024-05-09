@@ -29,6 +29,4 @@ export class MainComponent {
     this.router.navigateByUrl('/login');
   }
 
-
-
 }
