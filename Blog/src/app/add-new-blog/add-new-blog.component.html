@@ -1,0 +1,39 @@
+<!-- <p>add-new-blog works!</p> -->
+<div class="page-container">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-6">
+<div class="add-new-blog">
+    <h2>Add New Blog</h2>
+    
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" [(ngModel)]="title" placeholder="Enter title">
+    </div>
+    
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="description" placeholder="Enter description"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="categories">Categories:</label>
+      <select id="categories" name="categories" [(ngModel)]="selectedCategory">
+        <option value="art">Art</option>
+        <option value="science">Science</option>
+        <option value="technology">Technology</option>
+        <option value="sports">Sports</option>
+      </select>
+    </div>
+    
+    <div class="buttons">
+      <button (click)="saveChanges()">Save Changes</button>
+      <button (click)="cancel()">Cancel</button>
+      
+    </div>
+  </div>
+  
+</div>
+</div>
+</div>
+</div>

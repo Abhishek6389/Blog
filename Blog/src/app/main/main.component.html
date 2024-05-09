@@ -1,3 +1,5 @@
+<!-- <p>main works!</p> -->
+
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -7,20 +9,43 @@
   <ul>
     <li>
       <div class="title">
-        <p>taara</p>
+        <h1>taara</h1>
       </div>
     </li>
     <li>
-      <div class="cretae">
-        <button><i class="fa-regular fa-pen-to-square"></i></button>
+      <div class="create">
+        <button (click)="redirectToNewBlog()">
+        <i class="fa-regular fa-pen-to-square"></i></button>
       </div>
     </li>
     <li>
       <div class="logout">
-        <button>
+        <button (click)="logout()">
           <i class="fa-solid fa-right-from-bracket fa-rotate-180"></i>
         </button>
       </div>
     </li>
   </ul>
 </div>
+
+<h2>Blog Categories</h2>
+<div class="blogs-container">
+    <app-blog-card
+      [imageUrl]="'../../assets/tech.jpg'"
+      [text]="'Sceince'"
+    
+    ></app-blog-card>
+    <app-blog-card
+      [imageUrl]="'../../assets/travel.jpg'"
+      [text]="'Travel'"
+    ></app-blog-card>
+    <app-blog-card [imageUrl]="'../../assets/art.jpg'" [text]="'Art'"></app-blog-card>
+    <app-blog-card
+      [imageUrl]="'../../assets/lifestyle.jpg'"
+      [text]="'Lifestyle'"
+    ></app-blog-card>
+  </div>
+
+<div>
+  <h3>Featured Blogs</h3>
+</div> 
