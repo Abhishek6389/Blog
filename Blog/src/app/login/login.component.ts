@@ -81,6 +81,7 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router'; 
+import { AuthService } from '../auth.service';
 
 
 
@@ -96,9 +97,11 @@ export class LoginComponent implements OnInit {
   signUpForm!: FormGroup;
   signInError: string = '';
   signUpError: string = '';
-  
+  username : string ='';
+  password :string ='';
+ 
 
-  constructor(private http: HttpClient, private router: Router, private formBuilder: FormBuilder) {}
+  constructor(private http: HttpClient, private router: Router, private formBuilder: FormBuilder , private authService :AuthService) {}
 
   ngOnInit(): void {
     this.signInForm = this.formBuilder.group({
@@ -139,10 +142,18 @@ export class LoginComponent implements OnInit {
 
     const { username, password } = this.signInForm.value;
 
-    this.http.post("https://localhost:7202/api/Login", { username, password }, { responseType: 'text' }).subscribe(
-      (response: any) => {
-        this.router.navigate(['/main'])
-        console.log(response); // Log or handle the response as plain text
+    this.http.post<any>("https://localhost:7202/api/Login", {
+      username: username,
+      password: password
+    },{observe:'response'}).subscribe(
+      (response) => {
+        console.log(response);
+        const token = response.body.token;
+        if (token) {
+          this.authService.setToken(token);
+          console.log(token);
+          this.router.navigate(['/main']);
+        }
       },
       (error) => {
         this.signInError = 'Invalid username or password.';

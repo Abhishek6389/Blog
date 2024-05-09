@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterLink,Router } from '@angular/router';
 import { BlogCardComponent } from '../blog-card/blog-card.component';
-import { AddNewBlogComponent } from '../add-new-blog/add-new-blog.component';
+
 import { ArtComponent } from '../categories/art/art.component';
 import { LifestyleComponent } from '../categories/lifestyle/lifestyle.component';
 import { ScienceComponent } from '../categories/science/science.component';
 import { TravelComponent } from '../categories/travel/travel.component';
+import { RouterModule } from '@angular/router';
+
 
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [RouterLink,BlogCardComponent,AddNewBlogComponent,ArtComponent,LifestyleComponent,ScienceComponent,TravelComponent],
+  imports: [RouterLink,BlogCardComponent,ArtComponent,LifestyleComponent,ScienceComponent,TravelComponent , RouterModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })

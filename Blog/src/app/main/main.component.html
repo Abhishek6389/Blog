@@ -15,7 +15,8 @@
     <li>
       <div class="create">
         <button (click)="redirectToNewBlog()">
-        <i class="fa-regular fa-pen-to-square"></i></button>
+          <i class="fa-regular fa-pen-to-square"></i>
+        </button>
       </div>
     </li>
     <li>
@@ -30,22 +31,33 @@
 
 <h2>Blog Categories</h2>
 <div class="blogs-container">
-    <app-blog-card
+  <a [routerLink]="['/science']"
+    ><app-blog-card
       [imageUrl]="'../../assets/tech.jpg'"
       [text]="'Sceince'"
-    
-    ></app-blog-card>
-    <app-blog-card
+    ></app-blog-card
+  ></a>
+
+  <a [routerLink]="['/travel']"
+    ><app-blog-card
       [imageUrl]="'../../assets/travel.jpg'"
       [text]="'Travel'"
+    ></app-blog-card
+  ></a>
+  <a [routerLink]="['/art']"
+    ><app-blog-card
+      [imageUrl]="'../../assets/art.jpg'"
+      [text]="'Art'"
     ></app-blog-card>
-    <app-blog-card [imageUrl]="'../../assets/art.jpg'" [text]="'Art'"></app-blog-card>
+  </a>
+  <a [routerLink]="['/lifestyle']">
     <app-blog-card
       [imageUrl]="'../../assets/lifestyle.jpg'"
       [text]="'Lifestyle'"
     ></app-blog-card>
-  </div>
+  </a>
+</div>
 
 <div>
   <h3>Featured Blogs</h3>
-</div> 
+</div>
