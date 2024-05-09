@@ -19,6 +19,9 @@ export class ScienceComponent {
     // Fetch blogs by category
     this.http.get<any[]>('https://localhost:7202/api/Blogs/Category/science')
       .subscribe(blogs => {
+        blogs.forEach(blog => {
+          blog.imageUrl = 'https://source.unsplash.com/featured/?nature,landscape&w=100&h=100';
+        });
         this.blogs = blogs;
       });
   }

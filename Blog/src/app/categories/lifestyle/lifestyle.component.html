@@ -1,1 +1,14 @@
-<p>lifestyle works!</p>
+<h2>Lifestyle Blogs</h2>
+
+<div class="blog-container" *ngFor="let blog of blogs">
+  <div class="blog-card">
+    <div class="image">
+      <img [src]="blog.imageUrl" alt="{{ blog.title }}" />
+    </div>
+    <div class="details">
+      <h3>{{ blog.title }}</h3>
+      <p>{{ blog.description }}</p>
+      <p>Category: {{ blog.categories }}</p>
+    </div>
+  </div>
+</div>
