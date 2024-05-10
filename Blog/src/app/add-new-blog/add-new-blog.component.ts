@@ -33,7 +33,8 @@ export class AddNewBlogComponent {
     const blogData = {
       title: this.addBlogForm.value.title,
       description: this.addBlogForm.value.description,
-      categories: this.addBlogForm.value.categories
+      categories: this.addBlogForm.value.categories,
+      userId:localStorage.getItem('userId')
     };
  
     const httpOptions = {
