@@ -21,7 +21,7 @@ export class ScienceComponent {
     this.http.get<any[]>('https://localhost:7202/api/Blogs/Category/science')
       .subscribe(blogs => {
         blogs.forEach(blog => {
-          blog.imageUrl = 'https://source.unsplash.com/featured/?nature,landscape&w=100&h=100';
+          blog.imageUrl = 'https://source.unsplash.com/featured/?science,technology&w=100&h=100';
         });
         this.blogs = blogs;
       });
