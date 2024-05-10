@@ -2,6 +2,8 @@ export interface Blogs{
   blogId:number,
   description:string,
   title:string,
+  categories :string
+  imageUrl: string; 
 }
 
 import { CommonModule } from '@angular/common';
@@ -29,12 +31,29 @@ export class MyBlogComponent {
    
     this.http.get<Blogs[]>(`https://localhost:7202/api/Blogs/ByUser/${userId}`).subscribe(
           blogs => {
-            console.log(blogs);
+            blogs.forEach(blog => {
+              // Manually adding the imageUrl property
+              blog.imageUrl = 'https://source.unsplash.com/featured/?art&w=100&h=100';
+            });
             this.blogs = blogs;
           },
           error => {
             console.error('Error fetching collections:', error);
           }
         );
+
+  }
+
+  redirectToBlogData(blog: Blogs) {
+    // Assuming you have defined 'blog-data' route in your router configuration
+    this.router.navigateByUrl('/blog-data', { state: { blog: blog } });
+  }
+
+  getShortDescription(description: string): string {
+    const words = description.split(' ');
+    if (words.length > 20) {
+      return words.slice(0, 20).join(' ') + '...'; // Display only the first 20 words
+    }
+    return description;
   }
 }

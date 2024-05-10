@@ -202,6 +202,7 @@ export class LoginComponent implements OnInit {
     this.http.post<any>("https://localhost:7202/api/Login", user).subscribe({
       next: (data) => {
         console.log("Login successful:", data);
+        this.authService.loginvalue();
         localStorage.setItem('token', data.token);
         localStorage.setItem('userId', data.userId);
         this.router.navigate(['/main']);

@@ -140,7 +140,7 @@ a{
   text-decoration: underline;
 }
 
-a{
+ .blogs-container .a{
   text-decoration: none;
 }
 
@@ -207,6 +207,7 @@ width:20rem;
   margin-left: 5PX;
 }
 
+
 .logout button:hover{
   scale: 1.05;
   cursor: pointer;
@@ -228,7 +229,7 @@ width:20rem;
 
 .logout button:hover::after {
   opacity: 1;
-  left: -70px; /* Adjust this value as needed for the distance of the text */
+  left: -70px; 
 }
  .my button {
   position: relative;

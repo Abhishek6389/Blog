@@ -52,15 +52,18 @@ component:LoginComponent
 },
 {
     path:'add-new-blog',
-    component:AddNewBlogComponent
+    component:AddNewBlogComponent,
+    canActivate:[authGuard]
 },
 
 {
     path:'blog-data',
-    component:BlogDataComponent
+    component:BlogDataComponent,
+    canActivate:[authGuard]
 },{
     path:'main/my-blog',
-    component:MyBlogComponent
+    component:MyBlogComponent,
+    canActivate:[authGuard]
 }
 
 

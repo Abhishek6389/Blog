@@ -42,14 +42,6 @@ export class BlogDataComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  editBlog() {
-    // Implement edit functionality
-    // Redirect to edit page or open a modal for editing
-  }
-
-  deleteBlog() {
-    // Implement delete functionality
-    // Confirm deletion and then delete the blog
-  }
+ 
 }
 

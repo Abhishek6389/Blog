@@ -8,6 +8,7 @@
     padding: 20px;
     border-radius: 10px;
     background-color: #222;
+    height: 90vh;
   }
   
   .add-new-blog h2 {
@@ -54,6 +55,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 5rem;
   }
   
   .add-new-blog .buttons button[type="submit"] {
