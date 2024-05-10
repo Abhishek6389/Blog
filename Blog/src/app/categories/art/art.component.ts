@@ -25,6 +25,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-art',
@@ -36,7 +37,7 @@ import { FormsModule } from '@angular/forms';
 export class ArtComponent implements OnInit{
   blogs: any[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     // Fetch blogs by category
@@ -47,5 +48,18 @@ export class ArtComponent implements OnInit{
         });
         this.blogs = blogs;
       });
+  }
+
+  redirectToBlogData(blog: any) {
+    this.router.navigateByUrl('/blog-data', { state: { blog: blog } });
+  }
+
+
+  getShortDescription(description: string): string {
+    const words = description.split(' ');
+    if (words.length > 20) {
+      return words.slice(0, 20).join(' ') + '...'; // Display only the first 20 words
+    }
+    return description;
   }
 }

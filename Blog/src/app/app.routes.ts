@@ -8,6 +8,7 @@ import { LifestyleComponent } from './categories/lifestyle/lifestyle.component';
 import { ScienceComponent } from './categories/science/science.component';
 import { ArtComponent } from './categories/art/art.component';
 import { AddNewBlogComponent } from './add-new-blog/add-new-blog.component';
+import { BlogDataComponent } from './blog-data/blog-data.component';
 
 
 export const routes: Routes = [
@@ -25,7 +26,6 @@ component:LoginComponent
     path:'main',
     component:MainComponent
 },
-
 
 {
     path:'art',
@@ -46,6 +46,11 @@ component:LoginComponent
 {
     path:'add-new-blog',
     component:AddNewBlogComponent
+},
+
+{
+    path:'blog-data',
+    component:BlogDataComponent
 }
 
 

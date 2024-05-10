@@ -95,7 +95,6 @@ a{
   text-decoration: none;
 }
 
-
 /* Styles for featured blog cards */
 .featured-blogs {
   display: flex;
@@ -104,11 +103,16 @@ a{
 }
 
 .blog-card {
-  width: calc(33.33% - 10px); /* Adjust this value according to your layout */
+  display: flex;
+  flex-direction: column;
+  width: calc(33.33% - 10px); 
+  height: auto;
   background-color: #fff;
+  border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .blog-card .image img {
@@ -143,4 +147,3 @@ a{
   text-decoration: underline;
 }
 
-  

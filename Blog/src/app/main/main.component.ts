@@ -8,6 +8,7 @@ import { ScienceComponent } from '../categories/science/science.component';
 import { TravelComponent } from '../categories/travel/travel.component';
 import { RouterModule } from '@angular/router';
 import { AddNewBlogComponent } from '../add-new-blog/add-new-blog.component';
+//import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -18,7 +19,7 @@ import { AddNewBlogComponent } from '../add-new-blog/add-new-blog.component';
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
-export class MainComponent {
+export class MainComponent{
   constructor(private router: Router){}
 
   redirectToNewBlog() {
@@ -30,3 +31,4 @@ export class MainComponent {
   }
 
 }
+
