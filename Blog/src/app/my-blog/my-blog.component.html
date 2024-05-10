@@ -1,0 +1,12 @@
+<!-- my-blog.component.html -->
+
+<div *ngIf="blogs && blogs.length > 0">
+  <div *ngFor="let blog of blogs">
+    <h2>{{ blog.title }}</h2>
+    <p>{{ blog.description }}</p>
+  </div>
+</div>
+
+<div *ngIf="blogs && blogs.length === 0">
+  <p>No blogs found.</p>
+</div>

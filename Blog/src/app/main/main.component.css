@@ -204,9 +204,15 @@ width:20rem;
 
 .logout button {
   position: relative;
+  margin-left: 5PX;
 }
 
-.logout button::after {
+.logout button:hover{
+  scale: 1.05;
+  cursor: pointer;
+}
+
+/* .logout button::after {
   content: "Logout";
   position: absolute;
   top: 50%;
@@ -217,10 +223,15 @@ width:20rem;
   padding: 5px 10px;
   border-radius: 10px;
   opacity: 0;
-  transition: opacity 0.3s, left 0.3s; /* Added left transition for smooth movement */
-}
+  transition: opacity 0.3s, left 0.3s; 
+} */
 
 .logout button:hover::after {
   opacity: 1;
   left: -70px; /* Adjust this value as needed for the distance of the text */
 }
+ .my button {
+  position: relative;
+  top : 0;
+  
+ }

@@ -76,6 +76,8 @@
 
 // }
 
+
+
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, Inject, ɵprovideZonelessChangeDetection } from '@angular/core';
@@ -99,6 +101,7 @@ export class LoginComponent implements OnInit {
   signUpError: string = '';
   username : string ='';
   password :string ='';
+  
  
 
   constructor(private http: HttpClient, private router: Router, private formBuilder: FormBuilder , private authService :AuthService) {}
@@ -180,6 +183,7 @@ export class LoginComponent implements OnInit {
     //       }
     //     });
   //}
+ 
 
   onSubmit() {
     if (this.signInForm.invalid) {
