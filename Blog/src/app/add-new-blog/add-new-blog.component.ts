@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 export class AddNewBlogComponent {
   addBlogForm: FormGroup;
   blogError: string = '';
+ jwtToken:string="";
  
   constructor(private http: HttpClient, private router: Router, private formBuilder: FormBuilder) {
     this.addBlogForm = this.formBuilder.group({
