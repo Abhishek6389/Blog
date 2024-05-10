@@ -10,8 +10,8 @@
     height: 10rem; 
     margin: 20px 0;
     display: flex;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    border-radius: 18px;
     overflow: hidden;
     background-color: #fff;
     flex-direction: row;

@@ -22,7 +22,7 @@ export class TravelComponent implements OnInit {
     this.http.get<any[]>('https://localhost:7202/api/Blogs/Category/travel')
       .subscribe(blogs => {
         blogs.forEach(blog => {
-          blog.imageUrl = 'https://source.unsplash.com/featured/?nature,landscape&w=100&h=100';
+          blog.imageUrl = 'https://source.unsplash.com/featured/?travel&w=100&h=100';
         });
         this.blogs = blogs;
       });

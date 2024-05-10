@@ -16,5 +16,4 @@ redirect(){
   this.router.navigate(['/login']);
 }
 
-
 }
