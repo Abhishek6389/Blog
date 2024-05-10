@@ -78,7 +78,7 @@
 
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ɵprovideZonelessChangeDetection } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router'; 
 import { AuthService } from '../auth.service';
@@ -133,34 +133,82 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  // onSubmit() {
+  //   if (this.signInForm.invalid) {
+  //     this.signInError = 'Please fill out all fields.';
+  //     return;
+  //   }
+  //   this.signInError = '';
+
+  //   const { username, password } = this.signInForm.value;
+
+  //   this.http.post<any>("https://localhost:7202/api/Login", {
+  //     username: username,
+  //     password: password
+  //   },{observe:'response'}).subscribe(
+  //     (response) => {
+  //       console.log(response);
+  //       const token = response.body.token;
+  //       console.log(response.body.userId);
+  //       localStorage.setItem('userId',response.body.userId);
+  //       if (token) {
+  //         this.authService.setToken(token);
+  //         console.log(token);
+  //         this.router.navigate(['/main']);
+  //       }
+  //     },
+  //     (error) => {
+  //       this.signInError = 'Invalid username or password.';
+  //       console.error("Error occurred:", error);
+  //     }
+  //   );
+
+    // const user = {
+    //   username: this.username,
+    //   password: this.password,
+    // };
+     
+    //     this.http.post<any>("https://localhost:7202/api/Login", user).subscribe({
+    //       next: (data) => {
+    //         console.log("Login successful:",data);
+    //         localStorage.setItem('token', data.token);
+    //         localStorage.setItem('userId', data.userId);
+    //         this.router.navigate(['/main']);
+    //       },
+    //       error: (error) => {
+    //         console.error("Login failed:", error);
+    //       }
+    //     });
+  //}
+
   onSubmit() {
     if (this.signInForm.invalid) {
       this.signInError = 'Please fill out all fields.';
       return;
     }
     this.signInError = '';
-
+  
     const { username, password } = this.signInForm.value;
-
-    this.http.post<any>("https://localhost:7202/api/Login", {
+  
+    const user = {
       username: username,
-      password: password
-    },{observe:'response'}).subscribe(
-      (response) => {
-        console.log(response);
-        const token = response.body.token;
-        if (token) {
-          this.authService.setToken(token);
-          console.log(token);
-          this.router.navigate(['/main']);
-        }
+      password: password,
+    };
+  
+    this.http.post<any>("https://localhost:7202/api/Login", user).subscribe({
+      next: (data) => {
+        console.log("Login successful:", data);
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('userId', data.userId);
+        this.router.navigate(['/main']);
       },
-      (error) => {
+      error: (error) => {
         this.signInError = 'Invalid username or password.';
-        console.error("Error occurred:", error);
+        console.error("Login failed:", error);
       }
-    );
+    });
   }
+  
 
   onTrigger() {
     if (this.signUpForm.invalid) {
